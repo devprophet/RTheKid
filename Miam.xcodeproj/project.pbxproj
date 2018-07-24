@@ -7,14 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA03F51420FE515500B4F114 /* Badgeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03F51320FE515500B4F114 /* Badgeable.swift */; };
+		FA03F51720FE519900B4F114 /* HomeUIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03F51620FE519900B4F114 /* HomeUIBarButtonItem.swift */; };
+		FA03F51A20FE715F00B4F114 /* ControllerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03F51920FE715F00B4F114 /* ControllerProtocols.swift */; };
+		FA03F51C20FE75C400B4F114 /* StorePageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03F51B20FE75C400B4F114 /* StorePageTableViewController.swift */; };
+		FA03F52020FE767500B4F114 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03F51F20FE767500B4F114 /* DescriptionTableViewCell.swift */; };
+		FA03F52220FE7E7800B4F114 /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03F52120FE7E7800B4F114 /* MapTableViewCell.swift */; };
 		FA3EAD4620F8A69E00DE34C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3EAD4520F8A69E00DE34C5 /* AppDelegate.swift */; };
 		FA3EAD4820F8A69E00DE34C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3EAD4720F8A69E00DE34C5 /* ViewController.swift */; };
 		FA3EAD4B20F8A69E00DE34C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3EAD4920F8A69E00DE34C5 /* Main.storyboard */; };
 		FA3EAD4D20F8A6A000DE34C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3EAD4C20F8A6A000DE34C5 /* Assets.xcassets */; };
 		FA3EAD5020F8A6A000DE34C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3EAD4E20F8A6A000DE34C5 /* LaunchScreen.storyboard */; };
+		FA3EAD5920F8B93200DE34C5 /* CellInlineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3EAD5820F8B93200DE34C5 /* CellInlineController.swift */; };
+		FA3EAD5C20F8BC4E00DE34C5 /* InlineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3EAD5B20F8BC4E00DE34C5 /* InlineData.swift */; };
+		FA3EAD5E20F9E2E100DE34C5 /* InlineBigTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3EAD5D20F9E2E100DE34C5 /* InlineBigTableViewCell.swift */; };
+		FA65D4522107A38C009A4CBE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65D4512107A38C009A4CBE /* Model.swift */; };
+		FA79EDD420FC88340042AE4D /* CustomizationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79EDD320FC88340042AE4D /* CustomizationTableViewController.swift */; };
+		FA79EDD620FC8AA90042AE4D /* Customizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79EDD520FC8AA90042AE4D /* Customizable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA03F51320FE515500B4F114 /* Badgeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badgeable.swift; sourceTree = "<group>"; };
+		FA03F51620FE519900B4F114 /* HomeUIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIBarButtonItem.swift; sourceTree = "<group>"; };
+		FA03F51920FE715F00B4F114 /* ControllerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerProtocols.swift; sourceTree = "<group>"; };
+		FA03F51B20FE75C400B4F114 /* StorePageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePageTableViewController.swift; sourceTree = "<group>"; };
+		FA03F51F20FE767500B4F114 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		FA03F52120FE7E7800B4F114 /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		FA3EAD4220F8A69E00DE34C5 /* Miam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Miam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3EAD4520F8A69E00DE34C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA3EAD4720F8A69E00DE34C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +40,12 @@
 		FA3EAD4C20F8A6A000DE34C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA3EAD4F20F8A6A000DE34C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA3EAD5120F8A6A000DE34C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA3EAD5820F8B93200DE34C5 /* CellInlineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellInlineController.swift; sourceTree = "<group>"; };
+		FA3EAD5B20F8BC4E00DE34C5 /* InlineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineData.swift; sourceTree = "<group>"; };
+		FA3EAD5D20F9E2E100DE34C5 /* InlineBigTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineBigTableViewCell.swift; sourceTree = "<group>"; };
+		FA65D4512107A38C009A4CBE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FA79EDD320FC88340042AE4D /* CustomizationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationTableViewController.swift; sourceTree = "<group>"; };
+		FA79EDD520FC8AA90042AE4D /* Customizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customizable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +59,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA03F51520FE517A00B4F114 /* BarButton */ = {
+			isa = PBXGroup;
+			children = (
+				FA03F51620FE519900B4F114 /* HomeUIBarButtonItem.swift */,
+			);
+			path = BarButton;
+			sourceTree = "<group>";
+		};
+		FA03F51820FE714B00B4F114 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FA03F51920FE715F00B4F114 /* ControllerProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FA03F51D20FE761100B4F114 /* Store Page */ = {
+			isa = PBXGroup;
+			children = (
+				FA03F51E20FE764E00B4F114 /* Cell */,
+				FA03F51B20FE75C400B4F114 /* StorePageTableViewController.swift */,
+			);
+			path = "Store Page";
+			sourceTree = "<group>";
+		};
+		FA03F51E20FE764E00B4F114 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA03F51F20FE767500B4F114 /* DescriptionTableViewCell.swift */,
+				FA03F52120FE7E7800B4F114 /* MapTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FA3EAD3920F8A69E00DE34C5 = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +112,72 @@
 		FA3EAD4420F8A69E00DE34C5 /* Miam */ = {
 			isa = PBXGroup;
 			children = (
+				FA65D44E2107A2ED009A4CBE /* Model */,
+				FA65D44F2107A335009A4CBE /* View */,
+				FA65D4502107A33C009A4CBE /* Controller */,
+				FA03F51820FE714B00B4F114 /* Protocols */,
+				FA03F51520FE517A00B4F114 /* BarButton */,
+				FA79EDD220FC87F50042AE4D /* Controllers */,
+				FA3EAD5A20F8BC2A00DE34C5 /* Controller Style */,
+				FA3EAD5720F8B90500DE34C5 /* Cell Controller */,
 				FA3EAD4520F8A69E00DE34C5 /* AppDelegate.swift */,
 				FA3EAD4720F8A69E00DE34C5 /* ViewController.swift */,
 				FA3EAD4920F8A69E00DE34C5 /* Main.storyboard */,
 				FA3EAD4C20F8A6A000DE34C5 /* Assets.xcassets */,
 				FA3EAD4E20F8A6A000DE34C5 /* LaunchScreen.storyboard */,
 				FA3EAD5120F8A6A000DE34C5 /* Info.plist */,
+				FA03F51320FE515500B4F114 /* Badgeable.swift */,
 			);
 			path = Miam;
+			sourceTree = "<group>";
+		};
+		FA3EAD5720F8B90500DE34C5 /* Cell Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA3EAD5820F8B93200DE34C5 /* CellInlineController.swift */,
+				FA3EAD5D20F9E2E100DE34C5 /* InlineBigTableViewCell.swift */,
+			);
+			path = "Cell Controller";
+			sourceTree = "<group>";
+		};
+		FA3EAD5A20F8BC2A00DE34C5 /* Controller Style */ = {
+			isa = PBXGroup;
+			children = (
+				FA3EAD5B20F8BC4E00DE34C5 /* InlineData.swift */,
+				FA79EDD520FC8AA90042AE4D /* Customizable.swift */,
+			);
+			path = "Controller Style";
+			sourceTree = "<group>";
+		};
+		FA65D44E2107A2ED009A4CBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA65D4512107A38C009A4CBE /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA65D44F2107A335009A4CBE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA65D4502107A33C009A4CBE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA79EDD220FC87F50042AE4D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA03F51D20FE761100B4F114 /* Store Page */,
+				FA79EDD320FC88340042AE4D /* CustomizationTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +251,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA79EDD620FC8AA90042AE4D /* Customizable.swift in Sources */,
+				FA03F51420FE515500B4F114 /* Badgeable.swift in Sources */,
+				FA3EAD5C20F8BC4E00DE34C5 /* InlineData.swift in Sources */,
+				FA03F51A20FE715F00B4F114 /* ControllerProtocols.swift in Sources */,
+				FA03F52020FE767500B4F114 /* DescriptionTableViewCell.swift in Sources */,
+				FA79EDD420FC88340042AE4D /* CustomizationTableViewController.swift in Sources */,
 				FA3EAD4820F8A69E00DE34C5 /* ViewController.swift in Sources */,
+				FA65D4522107A38C009A4CBE /* Model.swift in Sources */,
 				FA3EAD4620F8A69E00DE34C5 /* AppDelegate.swift in Sources */,
+				FA3EAD5920F8B93200DE34C5 /* CellInlineController.swift in Sources */,
+				FA03F52220FE7E7800B4F114 /* MapTableViewCell.swift in Sources */,
+				FA3EAD5E20F9E2E100DE34C5 /* InlineBigTableViewCell.swift in Sources */,
+				FA03F51720FE519900B4F114 /* HomeUIBarButtonItem.swift in Sources */,
+				FA03F51C20FE75C400B4F114 /* StorePageTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +411,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2VS8CZC57W;
 				INFOPLIST_FILE = Miam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,6 +430,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2VS8CZC57W;
 				INFOPLIST_FILE = Miam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
