@@ -22,6 +22,9 @@ class Store {
     /// La localisation géographique du magasin.
     var location: CLLocation?
     
+    /// La distance du magasin par rapport à la position actuelle *(en mètres)*
+    var distance: Double?
+    
     /// L'adresse du magasin.
     var address: String?
     
@@ -33,6 +36,15 @@ class Store {
     
     /// Le type de magasin que c'est.
     var type: String?
+    
+    // TODO: Changer le type des parametres (CLLocation -> par ceux de Google)
+    /// Calcule la distance entre la localisation géographique du magasin et celle de l'utilisateur.
+    func calculateDistance(userLocation: CLLocation) {
+        if let location = location {
+            distance = userLocation.distance(from: location)
+        }
+    }
+    
 }
 
 /// Représente une catégorie.
@@ -69,6 +81,9 @@ class User {
     /// Le numéro de téléphone de l'utilisateur qui et **unique** par utilisateurs.
     var phone: String?
     
+    /// Si le numéro de l'utilisateur à était vérifier.
+    var verified: Bool?
+    
 }
 
 /// Représente un produit en vente.
@@ -88,6 +103,7 @@ class Product {
     
 }
 
+/// Représente un élément customisable.
 class Customisables {
     
     /// Le titre de cette categorie d'éléments a customiser
@@ -155,5 +171,57 @@ class Customisable {
     
     /// Le statut de l'élément à customiser (séléctionner `true` ou pas `false`).
     var state: Bool = false
+    
+    init(name: String?) {
+        self.name = name
+    }
+    
+}
+
+/// Représente un ensembles de magasins ayant le même type.
+class PackedStore {
+    
+    /// Le titre de l'ensemble.
+    var title: String?
+    
+    /// Les magasins ayant le même type.
+    var stores: [Store]?
+    
+    /// Le type de magasin que accepte cette ensemble.
+    var type: String
+    
+    init(title: String?, type: String) {
+        self.title = title
+        self.type = type
+    }
+    
+    convenience init(title: String?, type: String, stores: [Store]?) {
+        self.init(title: title, type: type)
+        add(stores: stores)
+    }
+    
+    /// Ajoute un ou plusieurs magasins dans cette ensemble.
+    func add(stores: [Store]?) {
+        if let stores = stores {
+            let sequences = stores.filter({ x in x.type == type })
+            self.stores?.append(contentsOf: sequences)
+        }
+    }
+    
+}
+
+class ServerData {
+    var users: [User]?
+    var stores: [Store]?
+    
+    func StoresByType() -> [String: Store]{
+        var ret = [String: Store]()
+        stores?.forEach({x in
+            if let t = x.type {
+                ret[t] = x
+            }
+        })
+        return ret
+    }
     
 }
