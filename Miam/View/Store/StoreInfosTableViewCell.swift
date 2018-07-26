@@ -1,16 +1,19 @@
 //
-//  BigCollectionCell.swift
+//  StoreInfosTableViewCell.swift
 //  Miam
 //
-//  Created by Alexis Gougaut on 25/07/2018.
+//  Created by Alexis Gougaut on 26/07/2018.
 //  Copyright © 2018 Alexis Gougaut. All rights reserved.
 //
 
 import UIKit
 
-class BigTableViewCell: UITableViewCell {
+class StoreInfosTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak private var name: UILabel!
+    @IBOutlet weak private var address: UILabel!
+    @IBOutlet weak private var backgroundImage: UIImageView!
+    @IBOutlet weak private var darkerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

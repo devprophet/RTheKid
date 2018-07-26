@@ -10,22 +10,32 @@ import UIKit
 
 class HomeController: UITableViewController {
     
+    // Les donnés du serveurs
     var data = ServerData()
-    var dataIndexed = [String: Store]()
+    
+    // Tous les stores classer par catégories
+    var packedStores : [PackedStore]?
+    
+    // Les différentes catégorie de produits.
+    var categories: [Categorie]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityIndicator.startAnimating()
+        tableView.backgroundView = activityIndicator
+        
         // Crée une categorie pour notre produit
         let productCategorie = Categorie()
-        productCategorie.name = "Snack"
-        productCategorie.imageUrl = "http://www.google.fr/"
+        productCategorie.name = "Américain"
+        productCategorie.imageUrl = "https://www.google.fr/"
         
         // Crée des customisables pour notre produit
         let customisables = Customisables()
         customisables.title = "Choisi ta base"
         customisables.customisables = [Customisable]()
-        customisables.customisables?.append(contentsOf: [
+        customisables.customisables!.append(contentsOf: [
                 Customisable(name: "Poulet"),
                 Customisable(name: "Jambon"),
                 Customisable(name: "Bouchons"),
@@ -37,6 +47,7 @@ class HomeController: UITableViewController {
         // Crée un produit
         let product = Product()
         product.categorie = productCategorie
+        product.customisables = [Customisables]()
         product.customisables = [customisables]
         product.name = "Américain"
         product.price = 3.00
@@ -52,13 +63,13 @@ class HomeController: UITableViewController {
         let store = Store()
         store.name = "Le parcour du gourmet"
         store.address = "6 venelle Sainte-Anne, 14000 Caen"
-        store.imageUrl = "http://www.google.fr/"
+        store.imageUrl = "https://www.google.fr/"
         store.owners = [Owner]()
         store.owners!.append(Owner())
         store.owners![0].user = user
         store.owners![0].level = -1
         store.distance = 1542
-        store.productSell = [Product]()
+        store.productSell = [product]
         store.type = "Snack"
         
         // Crée un data
@@ -68,38 +79,78 @@ class HomeController: UITableViewController {
         data.stores = [store]
         
         // Le process normale
-        dataIndexed = data.StoresByType()
+        packedStores = data.GetPackedStores()
+        categories = data.GetCategories(with: packedStores)
+        
+        activityIndicator.stopAnimating()
         
     }
     
     /// Le nombre de sections
     override func numberOfSections(in tableView: UITableView) -> Int {
         // data.stores.
-        return 2
+        return 1 + (packedStores?.count ?? 0)
     }
     
     /// Le nombre de row dans la section passez en parametre
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if(section == 0) {
+            return 1
+        } else {
+            return (packedStores?[section - 1].stores?.count) ?? 0
+        }
     }
     
     /// La cellule coresspondant à la row
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "0", for: indexPath)
+        if(indexPath.section == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "little", for: indexPath) as! LittleTableViewCell
+            cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.section)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "big", for: indexPath) as! BigTableViewCell
+            cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.section)
+            cell.bind(with: packedStores?[indexPath.section - 1].title)
+            return cell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(indexPath.section == 0) {
+            return 130
+        } else {
+            return 290
+        }
     }
 
 }
 
-/*
+
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if(collectionView.tag == 0) {
+            return categories?.count ?? 0
+        } else {
+            return packedStores?[collectionView.tag - 1].stores?.count ?? 0
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "default", for: indexPath)
+        if(collectionView.tag == 0) {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "little", for: indexPath) as! LittleCollectionViewCell
+            cell.bind(with: categories?[indexPath.row])
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "big", for: indexPath) as! BigCollectionViewCell
+            cell.bind(with: packedStores?[collectionView.tag - 1].stores?[indexPath.row])
+            return cell
+        }
     }
     
 }
-*/
+

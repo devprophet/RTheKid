@@ -202,6 +202,9 @@ class PackedStore {
     
     /// Ajoute un ou plusieurs magasins dans cette ensemble.
     func add(stores: [Store]?) {
+        if(self.stores == nil) {
+            self.stores = [Store]()
+        }
         if let stores = stores {
             let sequences = stores.filter({ x in x.type == type })
             self.stores?.append(contentsOf: sequences)
@@ -214,14 +217,41 @@ class ServerData {
     var users: [User]?
     var stores: [Store]?
     
-    func StoresByType() -> [String: Store]{
-        var ret = [String: Store]()
-        stores?.forEach({x in
-            if let t = x.type {
-                ret[t] = x
+    func GetPackedStores() -> [PackedStore]{
+        var packedStores = [PackedStore]()
+        stores?.forEach({store in
+            if let storeType = store.type {
+                if (packedStores.contains(where: {$0.type == storeType})) {
+                    let index = packedStores.firstIndex(where: {$0.type == storeType})!
+                    packedStores[index].add(stores: [store])
+                } else {
+                    let packedStore = PackedStore(title: storeType + " à proximité", type: storeType, stores: [store])
+                    packedStores.append(packedStore)
+                }
             }
         })
-        return ret
+        return packedStores
+    }
+    
+    func GetCategories(with: [PackedStore]?) -> [Categorie]? {
+        guard let packedStores = with else { return nil }
+        var categories = [Categorie]()
+        packedStores.forEach({ packedStore in
+            if let stores = packedStore.stores {
+                stores.forEach({ s in
+                    if let products = s.productSell {
+                        products.forEach( { p in
+                            if let categorie = p.categorie {
+                                if(!categories.contains(where: { $0.name == categorie.name })) {
+                                    categories.append(categorie)
+                                }
+                            }
+                        })
+                    }
+                })
+            }
+        })
+        return categories
     }
     
 }
