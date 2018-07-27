@@ -2,6 +2,13 @@ language: swift
 xcode_project: Miam.xcodeproj # The path of the xcode project
 xcode_sheme: Miam # The sheme
 osx_image: xcode9.4
+#<<<<<<< HEAD
 
 #before_install:
 #  - rvm install ruby-2.2.2
+=======
+before_install:
+    - brew update
+    - brew install xctool
+script: xcodebuild build -project Miam.xcodeproj -scheme 'Miam' -allowProvisioningUpdates #xctool -project Miam.xcodeproj -scheme Miam test
+#>>>>>>> c0e8c2a8870ddc96cb894fb623ed49b63b51c391
