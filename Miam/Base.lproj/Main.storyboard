@@ -607,7 +607,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="n6B-YY-E3b" kind="presentation" id="5cQ-43-5ZL"/>
+                        <segue destination="n6B-YY-E3b" kind="presentation" identifier="storeDetail" id="5cQ-43-5ZL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9VB-dB-IKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -635,7 +635,7 @@
         <!--Snack-->
         <scene sceneID="BNa-KM-CNw">
             <objects>
-                <tableViewController id="f9i-S5-1pP" sceneMemberID="viewController">
+                <tableViewController id="f9i-S5-1pP" customClass="StoreController" customModule="Miam" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gFn-Xg-7CN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -743,9 +743,17 @@
                             <outlet property="delegate" destination="f9i-S5-1pP" id="xwL-En-00i"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Snack" id="mmH-ya-qBQ">
-                        <barButtonItem key="leftBarButtonItem" title="Retour" id="Hcp-Fb-jMP"/>
-                        <barButtonItem key="rightBarButtonItem" title="Itinéraire" id="sUF-Gw-g6R"/>
+                    <navigationItem key="navigationItem" title="Snack" id="mmH-ya-qBQ" customClass="StoreNavigationItem" customModule="Miam" customModuleProvider="target">
+                        <barButtonItem key="leftBarButtonItem" title="Retour" id="Hcp-Fb-jMP">
+                            <connections>
+                                <action selector="back:" destination="mmH-ya-qBQ" id="h0r-GA-0OX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Itinéraire" id="sUF-Gw-g6R">
+                            <connections>
+                                <action selector="pathTo:" destination="mmH-ya-qBQ" id="lxt-zu-GjP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Et-H8-VEz" userLabel="First Responder" sceneMemberID="firstResponder"/>

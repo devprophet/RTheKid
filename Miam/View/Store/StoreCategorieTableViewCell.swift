@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StoreCategorieTableViewCell: UITableViewCell {
+class StoreCategorieTableViewCell: UITableViewCell, CanBind {
 
     @IBOutlet weak private var name: UILabel!
     @IBOutlet weak private var icon: UIImageView!
@@ -22,6 +22,12 @@ class StoreCategorieTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func bind(with data: Any?) {
+        guard let data = data as? Categorie else { return }
+        name.text = data.name
+        icon.loadImage(fromUrl: data.imageUrl)
     }
 
 }

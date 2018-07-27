@@ -45,6 +45,24 @@ class Store {
         }
     }
     
+    /// Permet de récuperer les différentes categorie de produit en vente dans ce magasin
+    /// - returns: Les différentes catégories de produits en vente dans ce magasin
+    func getCategories() -> [Categorie]? {
+        if let productsSell = productSell {
+            var categories = [Categorie]()
+            productsSell.forEach { x in
+                if let categorie = x.categorie {
+                    if(!categories.contains(where: { $0.name == x.name})) {
+                        categories.append(categorie)
+                    }
+                }
+            }
+            return categories
+        } else {
+            return nil
+        }
+    }
+    
 }
 
 /// Représente une catégorie.

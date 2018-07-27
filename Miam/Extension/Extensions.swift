@@ -17,16 +17,16 @@ extension UIImageView {
             if let Url = URL(string: url) {
                 URLSession.shared.dataTask(with: Url, completionHandler: { data, response, err in
                     if let err = err {
-                        print("\nError when loading image at \"\(url)\"\n\(err.localizedDescription)\n")
+                        print("Error when loading image at \"\(url)\"\n\(err.localizedDescription)")
                     } else {
                         if let data = data {
                             if let image = UIImage(data: data) {
                                 self.image = image
                             } else {
-                                print("\nError: The data is not an image!\n")
+                                print("Error: The data is not an image!")
                             }
                         } else {
-                            print("\nError: The data is nil!\n")
+                            print("Error: The data is nil!")
                         }
                     }
                 }).resume()

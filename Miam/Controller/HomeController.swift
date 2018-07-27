@@ -152,5 +152,30 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if(collectionView.tag == 0) {
+            // Ici pour les categories
+        } else {
+            // Ici pour les magasins
+            let store = packedStores?[collectionView.tag - 1].stores?[indexPath.row]
+            let sender = [
+                "store": store,
+                "categories": store?.getCategories()
+                ] as [String : Any?]
+            performSegue(withIdentifier: "storeDetail", sender: sender)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? UINavigationController {
+            if let data = sender as? [String: Any?] {
+                if let storeController = destination.viewControllers.first as? StoreController {
+                    storeController.store = data["store"] as? Store
+                    storeController.categories = data["categories"] as? [Categorie]
+                }
+            }
+        }
+    }
+    
 }
 

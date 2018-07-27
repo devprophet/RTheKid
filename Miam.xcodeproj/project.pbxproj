@@ -34,6 +34,7 @@
 		FAD54104210A55F90015D5ED /* StoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD54103210A55F90015D5ED /* StoreController.swift */; };
 		FAD54108210A58160015D5ED /* StoreInfosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD54107210A58160015D5ED /* StoreInfosTableViewCell.swift */; };
 		FAD5410A210A582D0015D5ED /* StoreCategorieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD54109210A582D0015D5ED /* StoreCategorieTableViewCell.swift */; };
+		FAD5410C210B08500015D5ED /* StoreNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5410B210B08500015D5ED /* StoreNavigationItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		FAD54103210A55F90015D5ED /* StoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreController.swift; sourceTree = "<group>"; };
 		FAD54107210A58160015D5ED /* StoreInfosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfosTableViewCell.swift; sourceTree = "<group>"; };
 		FAD54109210A582D0015D5ED /* StoreCategorieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCategorieTableViewCell.swift; sourceTree = "<group>"; };
+		FAD5410B210B08500015D5ED /* StoreNavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreNavigationItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 			children = (
 				FAD54107210A58160015D5ED /* StoreInfosTableViewCell.swift */,
 				FAD54109210A582D0015D5ED /* StoreCategorieTableViewCell.swift */,
+				FAD5410B210B08500015D5ED /* StoreNavigationItem.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				FA3EAD5C20F8BC4E00DE34C5 /* InlineData.swift in Sources */,
 				FA03F51A20FE715F00B4F114 /* ControllerProtocols.swift in Sources */,
 				FA03F52020FE767500B4F114 /* DescriptionTableViewCell.swift in Sources */,
+				FAD5410C210B08500015D5ED /* StoreNavigationItem.swift in Sources */,
 				FA79EDD420FC88340042AE4D /* CustomizationTableViewController.swift in Sources */,
 				FAA52A5621085E5900CF4B53 /* BigTableViewCell.swift in Sources */,
 				FA3EAD4820F8A69E00DE34C5 /* ViewController.swift in Sources */,
