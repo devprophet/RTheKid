@@ -10,5 +10,7 @@ osx_image: xcode9.4
 before_install:
     - brew update
     - brew install xctool
-script: xcodebuild build -project Miam.xcodeproj -scheme 'Miam' -allowProvisioningUpdates #xctool -project Miam.xcodeproj -scheme Miam test
+script: 
+xcodebuild test -destination 'platform=iOS Simulator,OS=11.4,name=iPhone X' -project Miam.xcodeproj -scheme 'Miam'
+#xcodebuild build -project Miam.xcodeproj -scheme 'Miam' -allowProvisioningUpdates #xctool -project Miam.xcodeproj -scheme Miam test
 #>>>>>>> c0e8c2a8870ddc96cb894fb623ed49b63b51c391
