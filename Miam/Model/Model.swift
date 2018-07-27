@@ -155,7 +155,7 @@ class Customisables {
     /// - parameter customisable: Le customisable à selectionner.
     func select(customisable: Customisable) {
         if let customisables = customisables {
-            if let index = customisables.firstIndex(where: { x in x.name == customisable.name }) {
+            if let index = customisables.index(where: { x in x.name == customisable.name }) {
                 if multipleSelection {
                     if !customisables[index].state {
                         if canSelect() {
@@ -166,7 +166,7 @@ class Customisables {
                     }
                 } else {
                     self.customisables!.forEach { x in
-                        if let _index = self.customisables!.firstIndex(where: { y in y.name == x.name } ) {
+                        if let _index = self.customisables!.index(where: { y in y.name == x.name } ) {
                             if _index != index {
                                 self.customisables![_index].state = false
                             } else {
@@ -240,7 +240,7 @@ class ServerData {
         stores?.forEach({store in
             if let storeType = store.type {
                 if (packedStores.contains(where: {$0.type == storeType})) {
-                    let index = packedStores.firstIndex(where: {$0.type == storeType})!
+                    let index = packedStores.index(where: {$0.type == storeType})!
                     packedStores[index].add(stores: [store])
                 } else {
                     let packedStore = PackedStore(title: storeType + " à proximité", type: storeType, stores: [store])

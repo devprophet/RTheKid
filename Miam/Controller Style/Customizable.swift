@@ -47,7 +47,7 @@ struct Customizable {
     
     mutating func Select(Item: CustomizableItem) {
         
-        if let index = Items.firstIndex(where: { x in x.Name == Item.Name }) {
+        if let index = Items.index(where: { x in x.Name == Item.Name }) {
             if MultipleSelection {
                 if !Items[index].State {
                     if CanSelected() {
@@ -58,7 +58,7 @@ struct Customizable {
                 }
             } else {
                 self.Items.forEach { x in
-                    if let _index = self.Items.firstIndex(where: { y in y.Name == x.Name } ) {
+                    if let _index = self.Items.index(where: { y in y.Name == x.Name } ) {
                         if _index != index {
                             self.Items[_index].State = false
                         } else {
