@@ -4,8 +4,8 @@ xcode_sheme: Miam # The sheme
 # osx_image: xcode9.4
 osx_image: xcode9.4
 
-before_install:
-    - brew upgrade xctool
+#before_install:
+    #- brew upgrade xctool
 script:
     xcodebuild -workspace Miam.xcodeproj/project.xcworkspace -scheme Miam -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' build-for-testing
     #xcodebuild test -destination 'platform=iOS Simulator,OS=11.4,name=iPhone X' -project Miam.xcodeproj -scheme 'Miam'
