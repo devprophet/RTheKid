@@ -74,6 +74,9 @@ class Categorie {
     /// L'url de l'image de la categorie.
     var imageUrl: String?
     
+    /// Les customisables de la catégorie.
+    var customisables: [Customisables]?
+    
 }
 
 /// Représente un propriétaire

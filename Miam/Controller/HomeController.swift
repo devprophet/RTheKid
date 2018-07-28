@@ -44,6 +44,9 @@ class HomeController: UITableViewController {
         customisables.multipleSelection = false
         customisables.maximumSelection = 0
         
+        // Ne pas oublier d'ajouter les customisables de la categorie
+        productCategorie.customisables = [customisables]
+        
         // Crée un produit
         let product = Product()
         product.categorie = productCategorie

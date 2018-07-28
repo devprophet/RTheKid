@@ -14,6 +14,9 @@
 		FA03F52020FE767500B4F114 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03F51F20FE767500B4F114 /* DescriptionTableViewCell.swift */; };
 		FA03F52220FE7E7800B4F114 /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03F52120FE7E7800B4F114 /* MapTableViewCell.swift */; };
 		FA11AA422109C32500AEAB4C /* CanBind.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA11AA412109C32500AEAB4C /* CanBind.swift */; };
+		FA142BDF210CBD27005C6BD1 /* OrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA142BDE210CBD27005C6BD1 /* OrderController.swift */; };
+		FA142BE2210CC0EB005C6BD1 /* OrderNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA142BE1210CC0EB005C6BD1 /* OrderNavigationItem.swift */; };
+		FA142BE4210CD468005C6BD1 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA142BE3210CD468005C6BD1 /* OrderTableViewCell.swift */; };
 		FA3EAD4620F8A69E00DE34C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3EAD4520F8A69E00DE34C5 /* AppDelegate.swift */; };
 		FA3EAD4820F8A69E00DE34C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3EAD4720F8A69E00DE34C5 /* ViewController.swift */; };
 		FA3EAD4B20F8A69E00DE34C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3EAD4920F8A69E00DE34C5 /* Main.storyboard */; };
@@ -56,6 +59,9 @@
 		FA03F51F20FE767500B4F114 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		FA03F52120FE7E7800B4F114 /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		FA11AA412109C32500AEAB4C /* CanBind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanBind.swift; sourceTree = "<group>"; };
+		FA142BDE210CBD27005C6BD1 /* OrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderController.swift; sourceTree = "<group>"; };
+		FA142BE1210CC0EB005C6BD1 /* OrderNavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderNavigationItem.swift; sourceTree = "<group>"; };
+		FA142BE3210CD468005C6BD1 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		FA3EAD4220F8A69E00DE34C5 /* Miam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Miam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3EAD4520F8A69E00DE34C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA3EAD4720F8A69E00DE34C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +150,15 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		FA142BE0210CC008005C6BD1 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				FA142BE1210CC0EB005C6BD1 /* OrderNavigationItem.swift */,
+				FA142BE3210CD468005C6BD1 /* OrderTableViewCell.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
 		FA3EAD3920F8A69E00DE34C5 = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +241,7 @@
 			children = (
 				FAD54105210A572C0015D5ED /* Home */,
 				FAD54106210A573D0015D5ED /* Store */,
+				FA142BE0210CC008005C6BD1 /* Order */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,6 +251,7 @@
 			children = (
 				FAA52A4F21085B8B00CF4B53 /* HomeController.swift */,
 				FAD54103210A55F90015D5ED /* StoreController.swift */,
+				FA142BDE210CBD27005C6BD1 /* OrderController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -378,7 +395,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA142BDF210CBD27005C6BD1 /* OrderController.swift in Sources */,
 				FAA52A5821086C6000CF4B53 /* LittleCollectionViewCell.swift in Sources */,
+				FA142BE2210CC0EB005C6BD1 /* OrderNavigationItem.swift in Sources */,
 				FAD54108210A58160015D5ED /* StoreInfosTableViewCell.swift in Sources */,
 				FAD54104210A55F90015D5ED /* StoreController.swift in Sources */,
 				FA79EDD620FC8AA90042AE4D /* Customizable.swift in Sources */,
@@ -386,6 +405,7 @@
 				FAD5410A210A582D0015D5ED /* StoreCategorieTableViewCell.swift in Sources */,
 				FA3EAD5C20F8BC4E00DE34C5 /* InlineData.swift in Sources */,
 				FA03F51A20FE715F00B4F114 /* ControllerProtocols.swift in Sources */,
+				FA142BE4210CD468005C6BD1 /* OrderTableViewCell.swift in Sources */,
 				FA03F52020FE767500B4F114 /* DescriptionTableViewCell.swift in Sources */,
 				FAD5410C210B08500015D5ED /* StoreNavigationItem.swift in Sources */,
 				FA79EDD420FC88340042AE4D /* CustomizationTableViewController.swift in Sources */,

@@ -63,6 +63,12 @@ class StoreController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row > 0) {
+            performSegue(withIdentifier: "storeOrder", sender: categories?[indexPath.row - 1].customisables)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if(indexPath.row == 0) {
             return 300
@@ -71,15 +77,15 @@ class StoreController: UITableViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if(segue.identifier == "storeOrder") {
+            if let destination = segue.destination as? UINavigationController {
+                if let controller = destination.viewControllers.first as? OrderController {
+                    controller.customisables = (sender as? [Customisables]) ?? nil
+                }
+            }
+        }
     }
-    */
+ 
 
 }
