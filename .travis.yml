@@ -3,7 +3,7 @@ xcode_project: Miam.xcodeproj # The path of the xcode project
 xcode_sheme: Miam # The sheme
 # osx_image: xcode9.4
 before_install:
-    brew update
-    brew install xctool
+    - brew update
+    - brew install xctool
 script: 
     xcodebuild test -destination 'platform=iOS Simulator,OS=11.4,name=iPhone X' -project Miam.xcodeproj -scheme 'Miam'
