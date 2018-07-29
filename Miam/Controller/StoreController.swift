@@ -65,7 +65,7 @@ class StoreController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(indexPath.row > 0) {
-            performSegue(withIdentifier: "storeOrder", sender: categories?[indexPath.row - 1].customisables)
+            performSegue(withIdentifier: "storeOrder", sender: store?.productSell?.first(where: { x in x.categorie == categories?[indexPath.row - 1] }))
         }
     }
     
@@ -81,7 +81,7 @@ class StoreController: UITableViewController {
         if(segue.identifier == "storeOrder") {
             if let destination = segue.destination as? UINavigationController {
                 if let controller = destination.viewControllers.first as? OrderController {
-                    controller.customisables = (sender as? [Customisables]) ?? nil
+                    controller.product = (sender as? Product) ?? nil
                 }
             }
         }

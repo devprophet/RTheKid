@@ -63,6 +63,10 @@ class Store {
         }
     }
     
+    func getCustomisables() -> [Customisables]? {
+        return nil
+    }
+    
 }
 
 /// Représente une catégorie.
@@ -231,6 +235,12 @@ class PackedStore {
             self.stores?.append(contentsOf: sequences)
         }
     }
+}
+
+class Order {
+    
+    /// Les produits commander dans cette commande.
+    var product: [Product]?
     
 }
 

@@ -9,8 +9,8 @@
 import UIKit
 
 class OrderController: UITableViewController {
-
-    var customisables: [Customisables]?
+    
+    var product: Product?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,7 @@ class OrderController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Recharge la tableView a chaque fois que la vue et afficher
         tableView.reloadData()
     }
 
@@ -28,26 +29,32 @@ class OrderController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // Le nombre de sections
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return customisables?.count ?? 0
+        return product?.customisables?.count ?? 0
     }
     
+    // Le nombre de cellule dans les sections
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (customisables?[section].customisables?.count) ?? 0
+        return (product?.customisables?[section].customisables?.count) ?? 0
     }
     
+    // Le titre des sections
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return customisables?[section].title
+        return product?.customisables?[section].title
     }
     
+    // Le model de chaques cellules de chaques sections
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! OrderTableViewCell
-        cell.bind(with: customisables?[indexPath.section].customisables?[indexPath.row])
+        cell.bind(with: product?.customisables?[indexPath.section].customisables?[indexPath.row])
         return cell
     }
     
+    // Appeler quand on selectionne une cellule
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        customisables?[indexPath.section].select(customisable: (customisables?[indexPath.section].customisables?[indexPath.row])!)
+        let customisable = (product?.customisables?[indexPath.section].customisables?[indexPath.row])
+        product?.customisables?[indexPath.section].select(customisable: customisable!)
         tableView.reloadSections(IndexSet(integer: indexPath.section), with: .automatic)
     }
 

@@ -34,3 +34,28 @@ extension UIImageView {
         }
     }
 }
+
+extension Categorie : Equatable {
+    static func == (lhs: Categorie, rhs: Categorie) -> Bool {
+        return (lhs.customisables == rhs.customisables &&
+                lhs.imageUrl == rhs.imageUrl &&
+                lhs.name == rhs.name)
+    }
+}
+
+extension Customisables : Equatable {
+    static func == (lhs: Customisables, rhs: Customisables) -> Bool {
+        return (lhs.customisables == rhs.customisables &&
+                lhs.maximumSelection == rhs.maximumSelection &&
+                lhs.multipleSelection == rhs.multipleSelection &&
+                lhs.title == rhs.title)
+    }
+}
+
+extension Customisable : Equatable {
+    static func == (lhs: Customisable, rhs: Customisable) -> Bool {
+        return (lhs.name == rhs.name && lhs.state == rhs.state)
+    }
+    
+    
+}

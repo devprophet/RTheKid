@@ -31,6 +31,7 @@ class OrderTableViewCell: UITableViewCell, CanBind {
         self.data = data
     }
     
+    /// Definie le status de la cellule
     func setState(state: Bool?) {
         guard let state = state else {
             self.accessoryType = .none
