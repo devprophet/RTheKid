@@ -56,6 +56,28 @@ extension Customisable : Equatable {
     static func == (lhs: Customisable, rhs: Customisable) -> Bool {
         return (lhs.name == rhs.name && lhs.state == rhs.state)
     }
-    
-    
+}
+
+extension UIColor {
+    convenience init(r: Int, g: Int, b: Int, a: Int) {
+        self.init(displayP3Red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
+    }
+}
+/*
+extension UIFont {
+    func sizeOfString (string: String, constrainedToWidth width: Double) -> CGSize {
+        let attributes = [NSAttributedStringKey.font: self]
+        let attString = NSAttributedString(string: string,attributes: attributes)
+        let framesetter = CTFramesetterCreateWithAttributedString(attString)
+        return CTFramesetterSuggestFrameSizeWithConstraints(framesetter, CFRange(location: 0,length: 0), nil, CGSize(width: width, height: .greatestFiniteMagnitude), nil)
+    }
+}
+*/
+extension UIFont {
+    func sizeOfString (string: String, constrainedToWidth width: Double) -> CGSize {
+        return NSString(string: string).boundingRect(with: CGSize(width: width, height: .greatestFiniteMagnitude),
+                                                             options: NSStringDrawingOptions.usesLineFragmentOrigin,
+                                                             attributes: [NSAttributedStringKey.font: self],
+                                                             context: nil).size
+    }
 }

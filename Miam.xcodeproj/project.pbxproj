@@ -17,6 +17,8 @@
 		FA3EAD5020F8A6A000DE34C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3EAD4E20F8A6A000DE34C5 /* LaunchScreen.storyboard */; };
 		FA6152A9210B4E5600BD4914 /* MiamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6152A8210B4E5600BD4914 /* MiamTests.swift */; };
 		FA65D4522107A38C009A4CBE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65D4512107A38C009A4CBE /* Model.swift */; };
+		FA703953210DF83200BE9920 /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA703952210DF83200BE9920 /* CartController.swift */; };
+		FA703956210DFE1D00BE9920 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA703955210DFE1D00BE9920 /* CartTableViewCell.swift */; };
 		FAA52A5021085B8B00CF4B53 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA52A4F21085B8B00CF4B53 /* HomeController.swift */; };
 		FAA52A5421085E4600CF4B53 /* LittleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA52A5321085E4600CF4B53 /* LittleTableViewCell.swift */; };
 		FAA52A5621085E5900CF4B53 /* BigTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA52A5521085E5900CF4B53 /* BigTableViewCell.swift */; };
@@ -54,6 +56,8 @@
 		FA6152A8210B4E5600BD4914 /* MiamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiamTests.swift; sourceTree = "<group>"; };
 		FA6152AA210B4E5600BD4914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA65D4512107A38C009A4CBE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FA703952210DF83200BE9920 /* CartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
+		FA703955210DFE1D00BE9920 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		FAA52A4F21085B8B00CF4B53 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		FAA52A5321085E4600CF4B53 /* LittleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleTableViewCell.swift; sourceTree = "<group>"; };
 		FAA52A5521085E5900CF4B53 /* BigTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTableViewCell.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 				FAD54105210A572C0015D5ED /* Home */,
 				FAD54106210A573D0015D5ED /* Store */,
 				FA142BE0210CC008005C6BD1 /* Order */,
+				FA703954210DFDBD00BE9920 /* Cart */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,8 +174,17 @@
 				FAA52A4F21085B8B00CF4B53 /* HomeController.swift */,
 				FAD54103210A55F90015D5ED /* StoreController.swift */,
 				FA142BDE210CBD27005C6BD1 /* OrderController.swift */,
+				FA703952210DF83200BE9920 /* CartController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA703954210DFDBD00BE9920 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				FA703955210DFE1D00BE9920 /* CartTableViewCell.swift */,
+			);
+			path = Cart;
 			sourceTree = "<group>";
 		};
 		FAA52A5B21086F6F00CF4B53 /* Extension */ = {
@@ -306,6 +320,7 @@
 				FA142BDF210CBD27005C6BD1 /* OrderController.swift in Sources */,
 				FAA52A5821086C6000CF4B53 /* LittleCollectionViewCell.swift in Sources */,
 				FA142BE2210CC0EB005C6BD1 /* OrderNavigationItem.swift in Sources */,
+				FA703956210DFE1D00BE9920 /* CartTableViewCell.swift in Sources */,
 				FAD54108210A58160015D5ED /* StoreInfosTableViewCell.swift in Sources */,
 				FAD54104210A55F90015D5ED /* StoreController.swift in Sources */,
 				FAD5410A210A582D0015D5ED /* StoreCategorieTableViewCell.swift in Sources */,
@@ -317,6 +332,7 @@
 				FA3EAD4620F8A69E00DE34C5 /* AppDelegate.swift in Sources */,
 				FAA52A5A21086C6F00CF4B53 /* BigCollectionViewCell.swift in Sources */,
 				FAA52A5D21086F7F00CF4B53 /* Extensions.swift in Sources */,
+				FA703953210DF83200BE9920 /* CartController.swift in Sources */,
 				FAA52A5021085B8B00CF4B53 /* HomeController.swift in Sources */,
 				FAA52A5421085E4600CF4B53 /* LittleTableViewCell.swift in Sources */,
 			);
